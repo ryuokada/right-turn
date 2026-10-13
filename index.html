@@ -13,18 +13,19 @@
             background-color: #000000;
             overflow: hidden;
             position: fixed;
+            -webkit-touch-callout: none;
         }
 
-        /* 画像や区切り線を流すコンテナ */
+        /* 横画面時に未来感のあるダイナミックなレイアウトに自動変化 */
         .marquee-container {
             display: flex;
             width: 200%;
-            height: 60%;
+            height: 65%;
             position: absolute;
             top: 5%;
             left: 0;
             align-items: center;
-            animation: scrollLoop 3s linear infinite;
+            animation: scrollLoop 2.5s linear infinite;
         }
         .marquee-track {
             display: flex;
@@ -37,30 +38,36 @@
             display: flex;
             align-items: center;
         }
+
+        /* 画像一枚一枚に未来的な黄色い枠とグロー効果を付与 */
         .item img {
-            height: 45vh;
+            height: 50vh;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+            border: 4px solid #ffff00;
+            border-radius: 12px;
+            padding: 8px;
+            background-color: #0a0a0a;
+            box-shadow: 0 0 25px rgba(255, 255, 0, 0.6), inset 0 0 15px rgba(255, 255, 0, 0.3);
         }
 
-        /* 画像と画像の間の黄色い縦線 */
+        /* 画像間のピカッと光る黄色い縦線アクセント */
         .yellow-divider {
             width: 6px;
-            height: 45vh;
+            height: 50vh;
             background-color: #ffff00;
-            margin: 0 3vw;
-            box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+            margin: 0 4vw;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
         }
 
-        /* 「右に寄ります！」を流すためのテロップ用コンテナ */
+        /* 「右に寄ります！」が流れるテロップエリア */
         .notice-container {
             display: flex;
             width: 200%;
             position: absolute;
-            bottom: 5vh;
+            bottom: 2vh;
             left: 0;
-            animation: scrollLoop 3s linear infinite;
+            animation: scrollLoop 2.5s linear infinite;
         }
         .notice-track {
             display: flex;
@@ -68,16 +75,14 @@
             justify-content: space-around;
             width: 50%;
         }
-
-        /* 目立つ黄色い流れる文字のスタイル */
         .notice-text {
             color: #ffff00;
-            font-size: 7vh;
+            font-size: 6vh;
             font-weight: bold;
-            font-family: sans-serif;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.6);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: 0 0 12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 0, 0.8);
             white-space: nowrap;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
         }
 
         @keyframes scrollLoop {
@@ -87,7 +92,7 @@
     </style>
 </head>
 <body>
-    <!-- 画像と黄色い縦線が流れるエリア -->
+    <!-- 画像と黄色い縦線がループして流れるエリア -->
     <div class="marquee-container">
         <div class="marquee-track">
             <div class="item">
@@ -111,15 +116,15 @@
         </div>
     </div>
 
-    <!-- 「右に寄ります！」の文字が流れるエリア -->
+    <!-- 「右に寄ります！」が滑らかに流れるエリア -->
     <div class="notice-container">
         <div class="notice-track">
-            <div class="notice-text">右に寄ります！</div>
-            <div class="notice-text">右に寄ります！</div>
+            <div class="notice-text">➡ 右に寄ります！ ➡</div>
+            <div class="notice-text">➡ 右に寄ります！ ➡</div>
         </div>
         <div class="notice-track">
-            <div class="notice-text">右に寄ります！</div>
-            <div class="notice-text">右に寄ります！</div>
+            <div class="notice-text">➡ 右に寄ります！ ➡</div>
+            <div class="notice-text">➡ 右に寄ります！ ➡</div>
         </div>
     </div>
 </body>
