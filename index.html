@@ -16,16 +16,16 @@
             -webkit-touch-callout: none;
         }
 
-        /* 画像が流れるエリア */
+        /* 画像が右方向に流れるエリア */
         .marquee-container {
             display: flex;
             width: 200%;
             height: 62%;
             position: absolute;
             top: 4%;
-            left: 0;
+            left: -100%;
             align-items: center;
-            animation: scrollLoop 3s linear infinite;
+            animation: scrollRight 3s linear infinite;
         }
         .marquee-track {
             display: flex;
@@ -60,14 +60,14 @@
             box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
         }
 
-        /* 「右に寄ります！」が重ならずにきれいに流れるテロップエリア */
+        /* 「右に寄ります！」が重ならずにきれいに右へ流れるテロップエリア */
         .notice-container {
             display: flex;
             width: 200%;
             position: absolute;
             bottom: 3vh;
-            left: 0;
-            animation: scrollLoop 3s linear infinite;
+            left: -100%;
+            animation: scrollRight 3s linear infinite;
         }
         .notice-track {
             display: flex;
@@ -85,14 +85,15 @@
             letter-spacing: 0.1em;
         }
 
-        @keyframes scrollLoop {
+        /* 右方向へスムーズに流すアニメーション */
+        @keyframes scrollRight {
             0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
+            100% { transform: translateX(50%); }
         }
     </style>
 </head>
 <body>
-    <!-- 画像と黄色い縦線が流れるエリア -->
+    <!-- 画像と黄色い縦線が右へ流れるエリア -->
     <div class="marquee-container">
         <div class="marquee-track">
             <div class="item">
@@ -116,7 +117,7 @@
         </div>
     </div>
 
-    <!-- 「右に寄ります！」が流れるエリア -->
+    <!-- 「右に寄ります！」が右へ流れるエリア -->
     <div class="notice-container">
         <div class="notice-track">
             <div class="notice-text">➡ 右に寄ります！ ➡</div>
