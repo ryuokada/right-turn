@@ -16,16 +16,15 @@
             -webkit-touch-callout: none;
         }
 
-        /* 画像が右方向に流れるエリア */
+        /* 無限ループを綺麗に保つマーキー構造 */
         .marquee-container {
             display: flex;
             width: 200%;
             height: 62%;
             position: absolute;
             top: 4%;
-            left: -100%;
-            align-items: center;
-            animation: scrollRight 3s linear infinite;
+            left: 0;
+            animation: scrollSmooth 3s linear infinite;
         }
         .marquee-track {
             display: flex;
@@ -39,7 +38,7 @@
             align-items: center;
         }
 
-        /* 一枚一枚の画像に未来的な黄色い枠とグロー効果を付与 */
+        /* 画像の一枚一枚に未来的な黄色い枠とグロー効果 */
         .item img {
             height: 48vh;
             width: auto;
@@ -51,7 +50,7 @@
             box-shadow: 0 0 20px rgba(255, 255, 0, 0.6), inset 0 0 10px rgba(255, 255, 0, 0.3);
         }
 
-        /* 画像と画像の間の黄色い縦線 */
+        /* 画像間の黄色い縦線 */
         .yellow-divider {
             width: 6px;
             height: 48vh;
@@ -60,14 +59,14 @@
             box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
         }
 
-        /* 「右に寄ります！」が重ならずにきれいに右へ流れるテロップエリア */
+        /* テロップが滑らかに右へ流れるエリア */
         .notice-container {
             display: flex;
             width: 200%;
             position: absolute;
             bottom: 3vh;
-            left: -100%;
-            animation: scrollRight 3s linear infinite;
+            left: 0;
+            animation: scrollSmooth 3s linear infinite;
         }
         .notice-track {
             display: flex;
@@ -85,10 +84,10 @@
             letter-spacing: 0.1em;
         }
 
-        /* 右方向へスムーズに流すアニメーション */
-        @keyframes scrollRight {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(50%); }
+        /* ちらつきの起きない完璧な右方向ループアニメーション */
+        @keyframes scrollSmooth {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
         }
     </style>
 </head>
@@ -117,7 +116,7 @@
         </div>
     </div>
 
-    <!-- 「右に寄ります！」が右へ流れるエリア -->
+    <!-- 「右に寄ります！」が流れるエリア -->
     <div class="notice-container">
         <div class="notice-track">
             <div class="notice-text">➡ 右に寄ります！ ➡</div>
