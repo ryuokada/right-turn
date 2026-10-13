@@ -16,16 +16,16 @@
             -webkit-touch-callout: none;
         }
 
-        /* 横画面時に未来感のあるダイナミックなレイアウトに自動変化 */
+        /* 画像が流れるエリア */
         .marquee-container {
             display: flex;
             width: 200%;
-            height: 65%;
+            height: 62%;
             position: absolute;
-            top: 5%;
+            top: 4%;
             left: 0;
             align-items: center;
-            animation: scrollLoop 2.5s linear infinite;
+            animation: scrollLoop 3s linear infinite;
         }
         .marquee-track {
             display: flex;
@@ -39,35 +39,35 @@
             align-items: center;
         }
 
-        /* 画像一枚一枚に未来的な黄色い枠とグロー効果を付与 */
+        /* 一枚一枚の画像に未来的な黄色い枠とグロー効果を付与 */
         .item img {
-            height: 50vh;
+            height: 48vh;
             width: auto;
             object-fit: contain;
             border: 4px solid #ffff00;
             border-radius: 12px;
-            padding: 8px;
+            padding: 6px;
             background-color: #0a0a0a;
-            box-shadow: 0 0 25px rgba(255, 255, 0, 0.6), inset 0 0 15px rgba(255, 255, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.6), inset 0 0 10px rgba(255, 255, 0, 0.3);
         }
 
-        /* 画像間のピカッと光る黄色い縦線アクセント */
+        /* 画像と画像の間の黄色い縦線 */
         .yellow-divider {
             width: 6px;
-            height: 50vh;
+            height: 48vh;
             background-color: #ffff00;
-            margin: 0 4vw;
+            margin: 0 3vw;
             box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
         }
 
-        /* 「右に寄ります！」が流れるテロップエリア */
+        /* 「右に寄ります！」が重ならずにきれいに流れるテロップエリア */
         .notice-container {
             display: flex;
             width: 200%;
             position: absolute;
-            bottom: 2vh;
+            bottom: 3vh;
             left: 0;
-            animation: scrollLoop 2.5s linear infinite;
+            animation: scrollLoop 3s linear infinite;
         }
         .notice-track {
             display: flex;
@@ -80,19 +80,19 @@
             font-size: 6vh;
             font-weight: bold;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            text-shadow: 0 0 12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 0, 0.8);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 0, 0.8);
             white-space: nowrap;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
         }
 
         @keyframes scrollLoop {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0%); }
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
         }
     </style>
 </head>
 <body>
-    <!-- 画像と黄色い縦線がループして流れるエリア -->
+    <!-- 画像と黄色い縦線が流れるエリア -->
     <div class="marquee-container">
         <div class="marquee-track">
             <div class="item">
@@ -116,7 +116,7 @@
         </div>
     </div>
 
-    <!-- 「右に寄ります！」が滑らかに流れるエリア -->
+    <!-- 「右に寄ります！」が流れるエリア -->
     <div class="notice-container">
         <div class="notice-track">
             <div class="notice-text">➡ 右に寄ります！ ➡</div>
