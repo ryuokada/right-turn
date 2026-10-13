@@ -13,17 +13,18 @@
             background-color: #000000;
             overflow: hidden;
             position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             -webkit-touch-callout: none;
         }
 
-        /* 無限ループを綺麗に保つマーキー構造 */
+        /* ① 上部：画像と黄色い縦線が流れるエリア */
         .marquee-container {
             display: flex;
             width: 200%;
-            height: 62%;
-            position: absolute;
-            top: 4%;
-            left: 0;
+            height: 70vh;
+            align-items: center;
             animation: scrollSmooth 3s linear infinite;
         }
         .marquee-track {
@@ -38,9 +39,9 @@
             align-items: center;
         }
 
-        /* 画像の一枚一枚に未来的な黄色い枠とグロー効果 */
+        /* 一枚一枚の画像に未来的な黄色い枠とグロー効果 */
         .item img {
-            height: 48vh;
+            height: 52vh;
             width: auto;
             object-fit: contain;
             border: 4px solid #ffff00;
@@ -53,19 +54,20 @@
         /* 画像間の黄色い縦線 */
         .yellow-divider {
             width: 6px;
-            height: 48vh;
+            height: 52vh;
             background-color: #ffff00;
             margin: 0 3vw;
             box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
         }
 
-        /* テロップが滑らかに右へ流れるエリア */
+        /* ② 下部：「右に寄ります！」が流れるエリア（独立したコンテナ） */
         .notice-container {
             display: flex;
             width: 200%;
-            position: absolute;
-            bottom: 3vh;
-            left: 0;
+            height: 22vh;
+            align-items: center;
+            background-color: #000000;
+            border-top: 2px solid rgba(255, 255, 0, 0.3);
             animation: scrollSmooth 3s linear infinite;
         }
         .notice-track {
@@ -76,7 +78,7 @@
         }
         .notice-text {
             color: #ffff00;
-            font-size: 6vh;
+            font-size: 8vh;
             font-weight: bold;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 0, 0.8);
@@ -84,7 +86,7 @@
             letter-spacing: 0.1em;
         }
 
-        /* ちらつきの起きない完璧な右方向ループアニメーション */
+        /* ちらつきのない滑らかなループアニメーション */
         @keyframes scrollSmooth {
             0% { transform: translateX(-50%); }
             100% { transform: translateX(0%); }
@@ -92,7 +94,8 @@
     </style>
 </head>
 <body>
-    <!-- 画像と黄色い縦線が右へ流れるエリア -->
+
+    <!-- 上部：画像エリア -->
     <div class="marquee-container">
         <div class="marquee-track">
             <div class="item">
@@ -116,7 +119,7 @@
         </div>
     </div>
 
-    <!-- 「右に寄ります！」が流れるエリア -->
+    <!-- 下部：テロップエリア -->
     <div class="notice-container">
         <div class="notice-track">
             <div class="notice-text">➡ 右に寄ります！ ➡</div>
@@ -127,5 +130,6 @@
             <div class="notice-text">➡ 右に寄ります！ ➡</div>
         </div>
     </div>
+
 </body>
 </html>
