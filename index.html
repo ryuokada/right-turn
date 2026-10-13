@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>自転車 右折ウィンカー</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            overflow: hidden;
+            position: fixed;
+        }
+        .marquee-container {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            align-items: center;
+            animation: scrollLoop 3s linear infinite;
+        }
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 50%;
+            height: 100%;
+        }
+        .item img {
+            height: 50vh;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        }
+        @keyframes scrollLoop {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-container">
+        <div class="marquee-track">
+            <div class="item">
+                <img src="IMG_6774.jpeg" alt="Finger">
+            </div>
+            <div class="item">
+                <img src="IMG_6774.jpeg" alt="Finger">
+            </div>
+        </div>
+        <div class="marquee-track">
+            <div class="item">
+                <img src="IMG_6774.jpeg" alt="Finger">
+            </div>
+            <div class="item">
+                <img src="IMG_6774.jpeg" alt="Finger">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
