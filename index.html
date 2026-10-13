@@ -32,10 +32,26 @@
             height: 100%;
         }
         .item img {
-            height: 50vh;
+            height: 45vh;
             width: auto;
             object-fit: contain;
             filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+        }
+        /* 目立つ黄色いテロップのスタイル */
+        .notice-text {
+            position: fixed;
+            bottom: 8vh;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #ffff00;
+            font-size: 8vh;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.6);
+            z-index: 10;
+            pointer-events: none;
+            letter-spacing: 0.1em;
         }
         @keyframes scrollLoop {
             0% { transform: translateX(-50%); }
@@ -62,5 +78,8 @@
             </div>
         </div>
     </div>
+
+    <!-- 黒い余白部分に表示する目立つ黄色い文字 -->
+    <div class="notice-text">右に寄ります！</div>
 </body>
 </html>
