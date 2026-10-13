@@ -23,7 +23,7 @@
         .marquee-container {
             display: flex;
             width: 200%;
-            height: 70vh;
+            height: 65vh;
             align-items: center;
             animation: scrollSmooth 3s linear infinite;
         }
@@ -41,7 +41,7 @@
 
         /* 一枚一枚の画像に未来的な黄色い枠とグロー効果 */
         .item img {
-            height: 52vh;
+            height: 48vh;
             width: auto;
             object-fit: contain;
             border: 4px solid #ffff00;
@@ -54,17 +54,17 @@
         /* 画像間の黄色い縦線 */
         .yellow-divider {
             width: 6px;
-            height: 52vh;
+            height: 48vh;
             background-color: #ffff00;
             margin: 0 3vw;
             box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
         }
 
-        /* ② 下部：「右に寄ります！」が流れるエリア（独立したコンテナ） */
+        /* ② 下部：「右に寄ります！」が流れるエリア */
         .notice-container {
             display: flex;
             width: 200%;
-            height: 22vh;
+            height: 25vh;
             align-items: center;
             background-color: #000000;
             border-top: 2px solid rgba(255, 255, 0, 0.3);
@@ -78,11 +78,11 @@
         }
         .notice-text {
             color: #ffff00;
-            font-size: 8vh;
+            font-size: 5vh; /* 文字サイズを調整して絶対に折り返さないように変更 */
             font-weight: bold;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 0, 0.8);
-            white-space: nowrap;
+            white-space: nowrap; /* 文字を絶対に改行させない */
             letter-spacing: 0.1em;
         }
 
