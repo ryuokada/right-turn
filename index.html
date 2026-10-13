@@ -164,5 +164,16 @@
         </div>
     </div>
 
+    <!-- 3秒後に自動で画面を閉じるプログラム -->
+    <script>
+        setTimeout(function() {
+            // タブを閉じる試み（ブラウザの仕様で閉じられない場合は履歴を戻る、または空白にする）
+            window.close();
+            // 万が一window.close()がブロックされた場合のフォールバック（履歴の戻る、または閉じた挙動に見せる）
+            setTimeout(function() {
+                window.location.href = "about:blank";
+            }, 100);
+        }, 3000); // 3000ミリ秒 = 3秒
+    </script>
 </body>
 </html>
