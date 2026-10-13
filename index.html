@@ -19,11 +19,10 @@
             -webkit-touch-callout: none;
         }
 
-        /* ① 上部：画像エリア（間隔を広く保ち、重なりを完全に防止） */
+        /* ① 上部：画像エリア */
         .marquee-container {
             display: flex;
             width: 200%;
-            height: 64vh;
             align-items: center;
             animation: scrollSmooth 4s linear infinite;
         }
@@ -39,32 +38,10 @@
             align-items: center;
         }
 
-        /* 画像サイズとゆとりある黄色い枠 */
-        .item img {
-            height: 44vh;
-            width: auto;
-            object-fit: contain;
-            border: 4px solid #ffff00;
-            border-radius: 12px;
-            padding: 8px;
-            background-color: #0a0a0a;
-            box-shadow: 0 0 25px rgba(255, 255, 0, 0.6), inset 0 0 15px rgba(255, 255, 0, 0.3);
-        }
-
-        /* 画像と画像の間の十分な間隔（黄色い縦線） */
-        .yellow-divider {
-            width: 6px;
-            height: 44vh;
-            background-color: #ffff00;
-            margin: 0 8vw; /* 間隔を広げてゆとりを持たせました */
-            box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
-        }
-
-        /* ② 下部：テロップエリア（1つの文に絞って重なりを完全に解消） */
+        /* ② 下部：テロップエリア */
         .notice-container {
             display: flex;
             width: 200%;
-            height: 26vh;
             align-items: center;
             background-color: #000000;
             border-top: 2px solid rgba(255, 255, 0, 0.3);
@@ -78,15 +55,81 @@
         }
         .notice-text {
             color: #ffff00;
-            font-size: 6vh;
             font-weight: bold;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 0, 0.8);
             white-space: nowrap;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.1em;
         }
 
-        /* 非常に滑らかなループアニメーション */
+        /* 画像の間に追加する黄色い矢印のスタイル */
+        .yellow-arrow-divider {
+            color: #ffff00;
+            font-weight: bold;
+            text-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
+            margin: 0 4vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ==========================================
+           【スマホ縦画面（ポートレート）時の専用設定】
+           ========================================== */
+        @media (orientation: portrait) {
+            .marquee-container {
+                height: 70vh;
+            }
+            .item img {
+                height: 35vh;
+                width: auto;
+                object-fit: contain;
+                border: 3px solid #ffff00;
+                border-radius: 10px;
+                padding: 6px;
+                background-color: #0a0a0a;
+                box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
+            }
+            .yellow-arrow-divider {
+                font-size: 8vh;
+            }
+            .notice-container {
+                height: 20vh;
+            }
+            .notice-text {
+                font-size: 5vh;
+            }
+        }
+
+        /* ==========================================
+           【スマホ横画面（ランドスケープ）時の専用設定】
+           ========================================== */
+        @media (orientation: landscape) {
+            .marquee-container {
+                height: 65vh;
+            }
+            .item img {
+                height: 48vh;
+                width: auto;
+                object-fit: contain;
+                border: 4px solid #ffff00;
+                border-radius: 12px;
+                padding: 8px;
+                background-color: #0a0a0a;
+                box-shadow: 0 0 25px rgba(255, 255, 0, 0.6), inset 0 0 15px rgba(255, 255, 0, 0.3);
+            }
+            .yellow-arrow-divider {
+                font-size: 12vh;
+            }
+            .notice-container {
+                height: 25vh;
+            }
+            .notice-text {
+                font-size: 6vh;
+            }
+        }
+
+        /* 滑らかな無限ループアニメーション */
         @keyframes scrollSmooth {
             0% { transform: translateX(-50%); }
             100% { transform: translateX(0%); }
@@ -95,18 +138,18 @@
 </head>
 <body>
 
-    <!-- 上部：画像エリア -->
+    <!-- 上部：画像と矢印エリア -->
     <div class="marquee-container">
         <div class="marquee-track">
             <div class="item">
                 <img src="IMG_6774.jpeg" alt="Finger">
-                <div class="yellow-divider"></div>
+                <div class="yellow-arrow-divider">➡</div>
             </div>
         </div>
         <div class="marquee-track">
             <div class="item">
                 <img src="IMG_6774.jpeg" alt="Finger">
-                <div class="yellow-divider"></div>
+                <div class="yellow-arrow-divider">➡</div>
             </div>
         </div>
     </div>
