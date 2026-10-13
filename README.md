@@ -49,18 +49,18 @@
     <div class="marquee-container">
         <div class="marquee-track">
             <div class="item">
-                <img src="finger.jpg" alt="Finger">
+                <img src="IMG_6774.jpeg" alt="Finger">
             </div>
             <div class="item">
-                <img src="finger.jpg" alt="Finger">
+                <img src="IMG_6774.jpeg" alt="Finger">
             </div>
         </div>
         <div class="marquee-track">
             <div class="item">
-                <img src="finger.jpg" alt="Finger">
+                <img src="IMG_6774.jpeg" alt="Finger">
             </div>
             <div class="item">
-                <img src="finger.jpg" alt="Finger">
+                <img src="IMG_6774.jpeg" alt="Finger">
             </div>
         </div>
     </div>
