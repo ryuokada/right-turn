@@ -19,12 +19,15 @@
             -webkit-touch-callout: none;
         }
 
-        /* ① 上部：画像エリア */
+        /* ① 上部：画像エリア（GPUアクセラレーションで超滑らか化） */
         .marquee-container {
             display: flex;
             width: 200%;
             align-items: center;
             animation: scrollSmooth 4s linear infinite;
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
         }
         .marquee-track {
             display: flex;
@@ -46,6 +49,9 @@
             background-color: #000000;
             border-top: 2px solid rgba(255, 255, 0, 0.3);
             animation: scrollSmooth 4s linear infinite;
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
         }
         .notice-track {
             display: flex;
@@ -129,10 +135,10 @@
             }
         }
 
-        /* 滑らかな無限ループアニメーション */
+        /* カクつきを完全に抑えた滑らかな無限ループアニメーション */
         @keyframes scrollSmooth {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0%); }
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
         }
     </style>
 </head>
@@ -171,7 +177,7 @@
             setTimeout(function() {
                 window.location.href = "about:blank";
             }, 100);
-        }, 10000); // 確実に10秒に変更
+        }, 10000);
     </script>
 </body>
 </html>
