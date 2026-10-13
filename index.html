@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>自転車 右折ウィンカー</title>
     <style>
         body, html {
@@ -78,10 +78,10 @@
            ========================================== */
         @media (orientation: portrait) {
             .marquee-container {
-                height: 70vh;
+                height: 68vh;
             }
             .item img {
-                height: 35vh;
+                height: 32vh;
                 width: auto;
                 object-fit: contain;
                 border: 3px solid #ffff00;
@@ -91,13 +91,13 @@
                 box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
             }
             .yellow-arrow-divider {
-                font-size: 8vh;
+                font-size: 7vh;
             }
             .notice-container {
-                height: 20vh;
+                height: 18vh;
             }
             .notice-text {
-                font-size: 5vh;
+                font-size: 4.5vh;
             }
         }
 
@@ -106,10 +106,10 @@
            ========================================== */
         @media (orientation: landscape) {
             .marquee-container {
-                height: 65vh;
+                height: 62vh;
             }
             .item img {
-                height: 48vh;
+                height: 45vh;
                 width: auto;
                 object-fit: contain;
                 border: 4px solid #ffff00;
@@ -119,13 +119,13 @@
                 box-shadow: 0 0 25px rgba(255, 255, 0, 0.6), inset 0 0 15px rgba(255, 255, 0, 0.3);
             }
             .yellow-arrow-divider {
-                font-size: 12vh;
+                font-size: 11vh;
             }
             .notice-container {
-                height: 25vh;
+                height: 22vh;
             }
             .notice-text {
-                font-size: 6vh;
+                font-size: 5.5vh;
             }
         }
 
@@ -164,16 +164,14 @@
         </div>
     </div>
 
-    <!-- 3秒後に自動で画面を閉じるプログラム -->
+    <!-- 10秒後に自動で画面を閉じるプログラム -->
     <script>
         setTimeout(function() {
-            // タブを閉じる試み（ブラウザの仕様で閉じられない場合は履歴を戻る、または空白にする）
             window.close();
-            // 万が一window.close()がブロックされた場合のフォールバック（履歴の戻る、または閉じた挙動に見せる）
             setTimeout(function() {
                 window.location.href = "about:blank";
             }, 100);
-        }, 3000); // 3000ミリ秒 = 3秒
+        }, 10000); // 10000ミリ秒 = 10秒
     </script>
 </body>
 </html>
