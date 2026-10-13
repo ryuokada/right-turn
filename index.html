@@ -19,13 +19,13 @@
             -webkit-touch-callout: none;
         }
 
-        /* ① 上部：画像と黄色い縦線が流れるエリア */
+        /* ① 上部：画像エリア（間隔を広く保ち、重なりを完全に防止） */
         .marquee-container {
             display: flex;
             width: 200%;
-            height: 65vh;
+            height: 64vh;
             align-items: center;
-            animation: scrollSmooth 3s linear infinite;
+            animation: scrollSmooth 4s linear infinite;
         }
         .marquee-track {
             display: flex;
@@ -39,36 +39,36 @@
             align-items: center;
         }
 
-        /* 一枚一枚の画像に未来的な黄色い枠とグロー効果 */
+        /* 画像サイズとゆとりある黄色い枠 */
         .item img {
-            height: 48vh;
+            height: 44vh;
             width: auto;
             object-fit: contain;
             border: 4px solid #ffff00;
             border-radius: 12px;
-            padding: 6px;
+            padding: 8px;
             background-color: #0a0a0a;
-            box-shadow: 0 0 20px rgba(255, 255, 0, 0.6), inset 0 0 10px rgba(255, 255, 0, 0.3);
+            box-shadow: 0 0 25px rgba(255, 255, 0, 0.6), inset 0 0 15px rgba(255, 255, 0, 0.3);
         }
 
-        /* 画像間の黄色い縦線 */
+        /* 画像と画像の間の十分な間隔（黄色い縦線） */
         .yellow-divider {
             width: 6px;
-            height: 48vh;
+            height: 44vh;
             background-color: #ffff00;
-            margin: 0 3vw;
+            margin: 0 8vw; /* 間隔を広げてゆとりを持たせました */
             box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
         }
 
-        /* ② 下部：「右に寄ります！」が流れるエリア */
+        /* ② 下部：テロップエリア（1つの文に絞って重なりを完全に解消） */
         .notice-container {
             display: flex;
             width: 200%;
-            height: 25vh;
+            height: 26vh;
             align-items: center;
             background-color: #000000;
             border-top: 2px solid rgba(255, 255, 0, 0.3);
-            animation: scrollSmooth 3s linear infinite;
+            animation: scrollSmooth 4s linear infinite;
         }
         .notice-track {
             display: flex;
@@ -78,15 +78,15 @@
         }
         .notice-text {
             color: #ffff00;
-            font-size: 5vh; /* 文字サイズを調整して絶対に折り返さないように変更 */
+            font-size: 6vh;
             font-weight: bold;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 0, 0.8);
-            white-space: nowrap; /* 文字を絶対に改行させない */
-            letter-spacing: 0.1em;
+            white-space: nowrap;
+            letter-spacing: 0.15em;
         }
 
-        /* ちらつきのない滑らかなループアニメーション */
+        /* 非常に滑らかなループアニメーション */
         @keyframes scrollSmooth {
             0% { transform: translateX(-50%); }
             100% { transform: translateX(0%); }
@@ -102,16 +102,8 @@
                 <img src="IMG_6774.jpeg" alt="Finger">
                 <div class="yellow-divider"></div>
             </div>
-            <div class="item">
-                <img src="IMG_6774.jpeg" alt="Finger">
-                <div class="yellow-divider"></div>
-            </div>
         </div>
         <div class="marquee-track">
-            <div class="item">
-                <img src="IMG_6774.jpeg" alt="Finger">
-                <div class="yellow-divider"></div>
-            </div>
             <div class="item">
                 <img src="IMG_6774.jpeg" alt="Finger">
                 <div class="yellow-divider"></div>
@@ -123,10 +115,8 @@
     <div class="notice-container">
         <div class="notice-track">
             <div class="notice-text">➡ 右に寄ります！ ➡</div>
-            <div class="notice-text">➡ 右に寄ります！ ➡</div>
         </div>
         <div class="notice-track">
-            <div class="notice-text">➡ 右に寄ります！ ➡</div>
             <div class="notice-text">➡ 右に寄ります！ ➡</div>
         </div>
     </div>
